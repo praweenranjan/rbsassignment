@@ -25,6 +25,11 @@ public class EmployeeController {
 		return null;
 	}
 	
+	@GetMapping("/test")
+	public String sayHelloWorld() {
+		return "hello world!!";
+	}
+	
 	
 	
 
