@@ -2,6 +2,11 @@ package com.rbs.emp.bean;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -9,8 +14,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Details of Employee")
+@Entity
+@Table(name = "employeejpa")
 public class Employee {
 
+	@Id
+	@GeneratedValue
+	@Column(name="empId")
 	private Integer empId;
 	
 	@Size(min=2, message="name should have atleast two charecters")
@@ -30,6 +40,13 @@ public class Employee {
 	public Employee(Integer empId, String name, Date hireDate, double salary) {
 		super();
 		this.empId=empId;
+		this.name = name;
+		this.hireDate = hireDate;
+		this.salary = salary;
+	}
+	
+	public Employee(String name, Date hireDate, double salary) {
+		super();
 		this.name = name;
 		this.hireDate = hireDate;
 		this.salary = salary;
@@ -63,7 +80,7 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", name=" + name + ", hireDate=" + hireDate + ", salary=" + salary + "]";
+		return "\nEmployee [empId=" + empId + ", name=" + name + ", hireDate=" + hireDate + ", salary=" + salary + "]";
 	}
 	
 	

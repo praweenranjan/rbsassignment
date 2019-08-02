@@ -1,5 +1,8 @@
 package com.rbs.emp.controller;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
 import java.net.URI;
 import java.util.List;
 
@@ -8,9 +11,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
-
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,7 @@ public class EmployeeResource {
 	@Autowired
 	private EmployeeService empService;
 	
-	@GetMapping("/employees")
+	@GetMapping(value="/employees", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public List<Employee> retriveAllEmployee() {
 		List<Employee> fetchAllEmployee = empService.findAll();
 		
@@ -38,7 +39,7 @@ public class EmployeeResource {
 		//return new ResponseEntity<>(fetchAllEmployee, HttpStatus.OK);
 	}
 	
-	@GetMapping("/employees/{empId}")
+	@GetMapping(value="/employees/{empId}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public Resource<Employee> retriveEmployee(@PathVariable int empId) {
 		Employee emp = empService.findOne(empId);
 		if(emp==null) {
@@ -66,7 +67,7 @@ public class EmployeeResource {
 		return ResponseEntity.created(location).build();
 	}
 	
-	@DeleteMapping("/employees/{empId}")
+	@DeleteMapping(value="/employees/{empId}",produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public Employee deleteEmployee(@PathVariable int empId) {
 		Employee emp = empService.deleteById(empId);
 		if(emp==null) {
