@@ -2,10 +2,10 @@ package com.rbs.emp.bean;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -16,12 +16,13 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "Details of Employee")
 @Entity
 @Table(name = "employeejpa")
+@NamedQuery(name="find_all_employee", query="select e from Employee e")
 public class Employee {
 
+	//@Column(name="empId")
 	@Id
 	@GeneratedValue
-	@Column(name="empId")
-	private Integer empId;
+	private Long empId;
 	
 	@Size(min=2, message="name should have atleast two charecters")
 	@ApiModelProperty(notes="name should have atleast two charecters")
@@ -35,9 +36,9 @@ public class Employee {
 	
 	
 	public Employee() {
-		
+		super();
 	}
-	public Employee(Integer empId, String name, Date hireDate, double salary) {
+	public Employee(Long empId, String name, Date hireDate, double salary) {
 		super();
 		this.empId=empId;
 		this.name = name;
@@ -52,10 +53,10 @@ public class Employee {
 		this.salary = salary;
 	}
 	
-	public Integer getEmpId() {
+	public Long getEmpId() {
 		return empId;
 	}
-	public void setEmpId(Integer empId) {
+	public void setEmpId(Long empId) {
 		this.empId = empId;
 	}
 	

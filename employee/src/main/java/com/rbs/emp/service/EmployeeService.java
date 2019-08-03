@@ -1,80 +1,49 @@
 package com.rbs.emp.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import com.rbs.emp.bean.Employee;
-import com.rbs.emp.dao.EmployeeDao;
+import com.rbs.emp.repository.EmployeeRepository;
 
 
-@Component
+@Service
 public class EmployeeService {
 	
-	//private static List<Employee> empList = new ArrayList<Employee>();
-	private static int empId = 10003;
-	/*static {
-		empList.add(new Employee(10001, "Praween", new Date(), 80000));
-		empList.add(new Employee(10002, "Ranjan", new Date(), 60000));
-		empList.add(new Employee(10003, "Mamta", new Date(), 40000));
-	}*/
-
 	@Autowired
-	EmployeeDao employeeDao;
+	EmployeeRepository employeeRepository;
 	
-	public List<Employee> findAll() {
-		//return empList;
-		return employeeDao.findAll();
+	public List<Employee> findAll(String sortBy) {
+		
+		Sort sortOrder = Sort.by(sortBy);
+		return (List<Employee>) employeeRepository.findAll(sortOrder);
 	}
 	
 	public Employee save(Employee emp) {
 		
-		if(emp.getEmpId()==null) {
-			emp.setEmpId(++empId);
-		}
-		//empList.add(emp);
+		return employeeRepository.save(emp);
 		
-		employeeDao.insert(emp);
-		return emp;
 	}
 	
-	public Employee findOne(int id) {
+	public Employee findOne(Long id) {
 		
-		Employee emp = employeeDao.findByEmpId(id);
-		/*for(Employee employee:empList) {
-			if(employee.getEmpId()==id) {
-				return employee;
-			}
-		}*/
+		Optional<Employee> empopt = employeeRepository.findById(id);
 		
-		if(emp!= null && emp.getEmpId()==id) {
-			return emp;
+		if(empopt.isPresent()) {
+			return empopt.get();
 		}
-		
 		
 		return null;
 	}
 	
-	public Employee deleteById(int empId) {
+	public void deleteById(int empId) {
 		
-		/*Iterator<Employee> iterator = empList.iterator();
-		while(iterator.hasNext()) {
-			Employee emp = iterator.next();
-			if(emp.getEmpId()==empId) {
-				iterator.remove();
-				return emp;
-			}
-		}*/
-		
-	  int deletedCount = employeeDao.deleteByEmpId(empId);
-	  if(deletedCount > 0) {
-		  Employee employee = new Employee();
-		  employee.setEmpId(empId);
-		  return employee;
-	  }
-		
-		return null;
+	  employeeRepository.deleteById((long) empId);;
+	  
 	}
 
 }
