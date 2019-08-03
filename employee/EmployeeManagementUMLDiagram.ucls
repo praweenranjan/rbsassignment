@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.rbs.emp.bean.Employee" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/bean/Employee.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="349" width="197" x="172" y="-65"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.rbs.emp.SwaggerConfig" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/SwaggerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="307" x="409" y="-65"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.rbs.emp.exception.CustomizedResponseEntityExceptionhandler" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/exception/CustomizedResponseEntityExceptionhandler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="133" width="657" x="1073" y="-65"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.rbs.emp.controller.EmployeeResource" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/controller/EmployeeResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="277" x="756" y="-65"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.rbs.emp.exception.EmployeeNotFoundException" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/exception/EmployeeNotFoundException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="203" x="1770" y="-65"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="6" language="java" name="com.rbs.emp.repository.EmployeeRepository" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/repository/EmployeeRepository.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="61" width="144" x="756" y="515"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="7" language="java" name="com.rbs.emp.EmployeeApplication" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/EmployeeApplication.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="145" x="2013" y="-65"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.rbs.emp.service.EmployeeService" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/service/EmployeeService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="168" x="756" y="324"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.rbs.emp.exception.ExceptionResponse" project="employee" 
+    file="/employee/src/main/java/com/rbs/emp/exception/ExceptionResponse.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="187" width="213" x="2198" y="-65"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="10">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="11" name="employeeService"/>      
+      <multiplicity id="12" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="13">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="14" name="employeeRepository"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

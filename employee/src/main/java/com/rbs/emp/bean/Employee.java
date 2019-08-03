@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -15,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Details of Employee")
 @Entity
-@Table(name = "employeejpa")
+//@Table(name = "employee")
 @NamedQuery(name="find_all_employee", query="select e from Employee e")
 public class Employee {
 

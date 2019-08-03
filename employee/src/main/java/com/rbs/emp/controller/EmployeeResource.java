@@ -58,6 +58,7 @@ public class EmployeeResource {
 	public ResponseEntity<Object> createEmployee(@Valid @RequestBody Employee emp) {
 		Employee savedEmployee = employeeService.save(emp);
 		
+		//To generate location of created resource.
 		URI location = ServletUriComponentsBuilder
 				.fromCurrentRequest()
 				.path("/{empId}")
