@@ -48,6 +48,7 @@ public class EmployeeApplicationTests {
 		HttpEntity<Employee> entity = new HttpEntity<Employee>(employee, headers);
 		ResponseEntity<String> result = this.restTemplate.postForEntity(BASE_URI, entity, String.class);
 
+		//comparing result
 		assertEquals(HttpStatus.CREATED.value(), result.getStatusCodeValue());
 		assertTrue(result.getHeaders().containsKey("Location"));
 		assertEquals(this.getURI("/employees/1").toString(), result.getHeaders().get("Location").get(0));
